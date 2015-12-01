@@ -55,14 +55,14 @@ The actual measured value was slightly lower, at $1.97V$, but the difference was
 % However, because you (what a smart cookie you are) decided to include the float package, you can use the option [H], which tells LaTeX "PUT THE ****ing FIGURE HERE OR I WILL GO BACK TO USING WORD YOU GODDAMN STUPID PIECE OF **** TYPESETTING PROGRAM" 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.8\textwidth]{CD1.png}
+	\includegraphics[width=.7\textwidth]{CD1.PNG}
 	\caption{Voltage Divider circuit}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	%instead of entering the width in terms of textwidth, you can use a set number of inches, or pt, or mm, or whatever
-	\includegraphics[width=.5\textwidth]{VoltageDivider.png}
+	\includegraphics[width=.7\textwidth]{VoltageDivider.png}
 	%Make sure to caption your figures! LaTeX will automatically number them for you.
 	\caption{Voltage Divider results}
  	\label{fig:awesome}
@@ -71,7 +71,86 @@ The actual measured value was slightly lower, at $1.97V$, but the difference was
 %You can make subsections (and subsubsections) if you need to go into detail
 \section{Measure Resistance}
 
+Five resistor values were tested, as shown below. For each resistor, the current it theoretically allowed was calculated as $\frac {1.976V} {[Resistance]}$, also in the table.
+\begin{table}[H]
+\centering
+\caption{Resistor testing data}
+\begin{tabular}{lll}
+Resistance & Calculated Current (mA) & Measured voltage \\
+604        & 3.272                   & 4.96             \\
+4000       & 0.494                   & 3.75             \\
+20000      & 0.099                   & 2.74             \\
+60000      & 0.033                   & 2.54             \\
+249000     & 0.008                   & 2.50            
+\end{tabular}
+\end{table}
+
+Shown here is a plot of the Currents and measurements for the lower four rows in the table, those with less than $1mA$ theoretical current flow. As expected, the data points fall nicely along a line, giving an accurate way to measure small currents. (\Fref{fig:some})
+
+Unfortunately, the $604\Omega$ resistor proved to allow more current to pass than the system could reliably measure, as seen by the fact that its data point falls well off the line. (\Fref{fig:current})
+
+
+
+\begin{figure}[]
+	\centering
+	\includegraphics[width=\textwidth]{4points-current.png}
+	\caption{Partial current measurement results}
+ 	\label{fig:some}
+\end{figure}
+
+\begin{figure}[]
+	\centering
+	%instead of entering the width in terms of textwidth, you can use a set number of inches, or pt, or mm, or whatever
+	\includegraphics[width=\textwidth]{5points-current.png}
+	%Make sure to caption your figures! LaTeX will automatically number them for you.
+	\caption{Full current measurement results}
+ 	\label{fig:current}
+\end{figure}
+
+
+\section{Measure Resistance}
+
+Five resistor values were tested, as shown below. For each resistor, the current it theoretically allowed was calculated as $\frac {1.976V} {[Resistance]}$, also in the table.
+\begin{table}[H]
+\centering
+\caption{Resistor testing data}
+\begin{tabular}{lll}
+Resistance & Calculated Current (mA) & Measured voltage \\
+604        & 3.272                   & 4.96             \\
+4000       & 0.494                   & 3.75             \\
+20000      & 0.099                   & 2.74             \\
+60000      & 0.033                   & 2.54             \\
+249000     & 0.008                   & 2.50            
+\end{tabular}
+\end{table}
+
+Shown here is a plot of the Currents and measurements for the lower four rows in the table, those with less than $1mA$ theoretical current flow. As expected, the data points fall nicely along a line, giving an accurate way to measure small currents. (\Fref{fig:some})
+
+Unfortunately, the $604\Omega$ resistor proved to allow more current to pass than the system could reliably measure, as seen by the fact that its data point falls well off the line. (\Fref{fig:current})
+
+
+
+\begin{figure}[]
+	\centering
+	\includegraphics[width=\textwidth]{4points-current.png}
+	\caption{Partial current measurement results}
+ 	\label{fig:some}
+\end{figure}
+
+\begin{figure}[]
+	\centering
+	%instead of entering the width in terms of textwidth, you can use a set number of inches, or pt, or mm, or whatever
+	\includegraphics[width=\textwidth]{5points-current.png}
+	%Make sure to caption your figures! LaTeX will automatically number them for you.
+	\caption{Full current measurement results}
+ 	\label{fig:current}
+\end{figure}
+
+
 
 
 
 \end{document}
+
+
+
